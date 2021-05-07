@@ -66,4 +66,9 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return products;
     }
+
+    public Integer deleteProduct(String productId){
+        SQLiteDatabase MyDB = getWritableDatabase();
+        return MyDB.delete("tbl_product","productId = ?",new String[]{productId});
+    }
 }
